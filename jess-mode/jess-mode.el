@@ -99,16 +99,16 @@ is'' if there are too many or few parens--answering no leaves the point at
 the place of error.  If the value is 'warn, then a warning is issued and
 the file is written.")
 
-(when (not jess-mode-map)
-  (let ((map (make-sparse-keymap "Jess")))
-    (setq jess-mode-map
-          (nconc (make-sparse-keymap) shared-lisp-mode-map))
-    (define-key jess-mode-map [menu-bar] (make-sparse-keymap))
-    (define-key jess-mode-map [menu-bar jess]
-      (cons "Jess" map))
-    (define-key map [comment-region] '("Comment Out Region" . comment-region))
-    (define-key map [indent-region] '("Indent Region" . indent-region))
-    (define-key map [indent-line] '("Indent Line" . lisp-indent-line))))
+;; (when (not jess-mode-map)
+;;   (let ((map (make-sparse-keymap "Jess")))
+;;     (setq jess-mode-map
+;;           (nconc (make-sparse-keymap) shared-lisp-mode-map))
+;;     (define-key jess-mode-map [menu-bar] (make-sparse-keymap))
+;;     (define-key jess-mode-map [menu-bar jess]
+;;       (cons "Jess" map))
+;;     (define-key map [comment-region] '("Comment Out Region" . comment-region))
+;;     (define-key map [indent-region] '("Indent Region" . indent-region))
+;;     (define-key map [indent-line] '("Indent Line" . lisp-indent-line))))
 
 (if (not jess-mode-syntax-table)
     (let ((i 0))
